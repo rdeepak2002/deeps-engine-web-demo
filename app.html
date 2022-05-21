@@ -149,24 +149,24 @@
       });
     }
 
-    // if (element) element.value += "Downloading data file...\n";
+    if (element) element.value += "Downloading data file...\n";
 
-    // var dataDownload = download('/DeepsEngine.data').then(function(data) {
-    //   if (element) element.value += "Downloaded data file\n";
-    //   if (element) element.scrollTop = element.scrollHeight; // focus on bottom
-    //
-    //   Module['downloadedData'] = data;
-    //
-    //   if (element) element.value += "Downloading js file...\n";
-    //   var jsDownload = download('/DeepsEngine.js').then(function(data) {
-    //     if (element) element.value += "Downloaded js file\n";
-    //     if (element) element.scrollTop = element.scrollHeight; // focus on bottom
-    //
-    //     Module['mainScriptUrlOrBlob'] = new Blob([data]);
-    //     addScriptToDom(data);
-    //   });
-    // });
+    var dataDownload = download('/DeepsEngine.data').then(function(data) {
+      if (element) element.value += "Downloaded data file\n";
+      if (element) element.scrollTop = element.scrollHeight; // focus on bottom
+
+      Module['downloadedData'] = data;
+
+      if (element) element.value += "Downloading js file...\n";
+      var jsDownload = download('/DeepsEngine.js').then(function(data) {
+        if (element) element.value += "Downloaded js file\n";
+        if (element) element.scrollTop = element.scrollHeight; // focus on bottom
+
+        Module['mainScriptUrlOrBlob'] = new Blob([data]);
+        addScriptToDom(data);
+      });
+    });
 </script>
-<script async type="text/javascript" src="./DeepsEngine.js"></script>
+<!-- <script async type="text/javascript" src="./DeepsEngine.js"></script> -->
 </body>
 </html>
