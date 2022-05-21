@@ -121,7 +121,7 @@
         xhr.open('GET', url, true);
         xhr.responseType = 'arraybuffer';
         xhr.onload = function() { resolve(xhr.response); };
-        xhr.onerror = function(e) { reject(e); };
+        xhr.onerror = function(e) { reject(e); console.error("Error downloading file"); };
         xhr.send(null);
       });
     }
