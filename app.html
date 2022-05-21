@@ -151,14 +151,14 @@
 
     if (element) element.value += "Downloading data file...\n";
 
-    var dataDownload = download('/DeepsEngine.data').then(function(data) {
+    var dataDownload = download('https://dl.dropboxusercontent.com/1/view/804kf9tce5dvonm/DeepsEngine/DeepsEngine.data').then(function(data) {
       if (element) element.value += "Downloaded data file\n";
       if (element) element.scrollTop = element.scrollHeight; // focus on bottom
 
       Module['downloadedData'] = data;
 
       if (element) element.value += "Downloading js file...\n";
-      var jsDownload = download('/DeepsEngine.js').then(function(data) {
+      var jsDownload = download('https://dl.dropboxusercontent.com/1/view/59upakkfb1mklt8/DeepsEngine/DeepsEngine.js').then(function(data) {
         if (element) element.value += "Downloaded js file\n";
         if (element) element.scrollTop = element.scrollHeight; // focus on bottom
 
